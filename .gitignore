@@ -1,6 +1,87 @@
-*.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+var style = document.createElement('style');
+style.type = 'text/css';style.innerHTML = '.LGreen { color: rgb(124, 252, 0)!important;border-left: rgb(124, 252, 0) 3px solid!important; }'; //verded
+document.getElementsByTagName('head')[0].appendChild(style);
+
+$("#chat-messages").append("<div class='system'><i class='icon icon-active-rollover'></i><span class='text'>Planos de Fundo script ativado!</span></div>");
+$("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para desativar os planos de fundo, digite: /desativarbg <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
+$("#chat-messages").append("<div class='system'></i><span class='text'>BGs por: PlugStation.  Todos os direitos reservados.</span></div>");
+
+API.on(API.CHAT_COMMAND, command);
+function command(value) {
+cmd = value.split(" ");
+
+if (cmd[0] == "/comandosbg" || cmd[0] == "/cmdsbg"){
+$("#chat-messages").append("<div class='system'></i><span class='text'>Planos de Fundo, Comandos e Informações:</span></div>");
+$("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para desativar os planos de fundo, digite: /desativarbg <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
+}
+if (cmd[0] == "/bg1"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 1: Skygazer Theme.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/N82wzhY.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg2"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 2: Castleland (by Dionysu5).</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/jNRQXKZ.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg3"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 3: End of Line Club.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/6N7svVu.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg4"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 4: Fairy Tale Land.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/XZNVZmj.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg5"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 5: Architect Chamber.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/8hfUntO.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg6"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 6: Ancient Ruins.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/HG8mqaM.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg7"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 7: Digital Dungeon Theme.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/WTylHRy.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg8"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 8: TT.fm After Party Theme.</span></div>");
+$("body").css("background-image", "url(http://i.imgur.com/GZKgCpk.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+}
+if (cmd[0] == "/bg0"){
+$("body").css("background-image", "url(http://plug.dj/_/static/images/background.cd89e94.jpg)");
+$("body").css("background-color", "rgb(0, 0, 0)");
+$("body").css("background-position", "(-332.5px 45px)");
+$("body").css("background-repeat", "(no-repeat no-repeat)");
+}
+if (cmd[0] == "/desativarbg"){
+$("body").css("background-image", "url(http://plug.dj/_/static/images/background.cd89e94.jpg)");
+$("body").css("background-color", "rgb(0, 0, 0)");
+$("body").css("background-position", "(-332.5px 45px)");
+$("body").css("background-repeat", "(no-repeat no-repeat)");
+$("span.username").css("color", "#FFFFFF");
+$("#room-name").css("color", "#FFFFFF");
+$("#now-playing-media").css("color", "#FFFFFF");
+$("#hit").css("color", "#FFFFFF");
+$("#next-media-title").css("color", "#FFFFFF");
+$("#header-panel-bar").css("color", "#FFFFFF");
+$("#volume").css("color", "#FFFFFF");
+$("#now-playing-time").css("color", "#FFFFFF");
+$("#user-meta").css("color", "#FFFFFF");
+}
+}

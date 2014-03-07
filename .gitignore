@@ -1,10 +1,23 @@
+$("body").css("background-image", "url(http://i.imgur.com/XZNVZmj.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+$(".item.s-av.selected").click();
+$("span.username").css("color", "#32CD32");
+$("#room-name").css("color", "#32CD32");
+$("#now-playing-media").css("color", "#32CD32");
+$("#hit").css("color", "#32CD32");
+$("#next-media-title").css("color", "#32CD32");
+$("#header-panel-bar").css("color", "#32CD32");
+$("#volume").css("color", "#32CD32");
+$("#now-playing-time").css("color", "#32CD32");
+$("#user-meta").css("color", "#32CD32");
 
 var style = document.createElement('style');
 style.type = 'text/css';style.innerHTML = '.LGreen { color: rgb(124, 252, 0)!important;border-left: rgb(124, 252, 0) 3px solid!important; }'; //verded
 document.getElementsByTagName('head')[0].appendChild(style);
 
 $("#chat-messages").append("<div class='system'><i class='icon icon-active-rollover'></i><span class='text'>Planos de Fundo script ativado!</span></div>");
-$("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para desativar os planos de fundo, digite: /desativarbg <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
+$("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para ativar/desativar os planos de fundo, digite:/ativarbg /desativarbg <br/>Para ativar/desativar as cores digite: /coreson /coresoff <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
 $("#chat-messages").append("<div class='system'></i><span class='text'>BGs por: PlugStation.  Todos os direitos reservados.</span></div>");
 
 API.on(API.CHAT_COMMAND, command);
@@ -13,7 +26,7 @@ cmd = value.split(" ");
 
 if (cmd[0] == "/comandosbg" || cmd[0] == "/cmdsbg"){
 $("#chat-messages").append("<div class='system'></i><span class='text'>Planos de Fundo, Comandos e Informações:</span></div>");
-$("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para desativar os planos de fundo, digite: /desativarbg <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
+$("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para ativar/desativar os planos de fundo, digite:/ativarbg /desativarbg <br/>Para ativar/desativar as cores digite: /coreson /coresoff <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
 }
 if (cmd[0] == "/bg1"){
 $("#chat-messages").append("<div class='Orange system'></i><span class='text'>Plano de Fundo 1: Skygazer Theme.</span></div>");
@@ -70,6 +83,8 @@ $("body").css("background-position", "(-332.5px 45px)");
 $("body").css("background-repeat", "(no-repeat no-repeat)");
 }
 if (cmd[0] == "/desativarbg"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Planos de Fundo script desativado.</span></div>");
+API.off(API.CHAT_COMMAND, command);
 $("body").css("background-image", "url(http://plug.dj/_/static/images/background.cd89e94.jpg)");
 $("body").css("background-color", "rgb(0, 0, 0)");
 $("body").css("background-position", "(-332.5px 45px)");
@@ -83,5 +98,51 @@ $("#header-panel-bar").css("color", "#FFFFFF");
 $("#volume").css("color", "#FFFFFF");
 $("#now-playing-time").css("color", "#FFFFFF");
 $("#user-meta").css("color", "#FFFFFF");
+}
+if (cmd[0] == "/coreson"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Cores ativadas.</span></div>");
+("span.username").css("color", "#32CD32");
+$("#room-name").css("color", "#32CD32");
+$("#now-playing-media").css("color", "#32CD32");
+$("#hit").css("color", "#32CD32");
+$("#next-media-title").css("color", "#32CD32");
+$("#header-panel-bar").css("color", "#32CD32");
+$("#volume").css("color", "#32CD32");
+$("#now-playing-time").css("color", "#32CD32");
+$("#user-meta").css("color", "#32CD32");
+}
+if (cmd[0] == "/coresoff"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Cores desativadas.</span></div>");
+$("span.username").css("color", "#FFFFFF");
+$("#room-name").css("color", "#FFFFFF");
+$("#now-playing-media").css("color", "#FFFFFF");
+$("#hit").css("color", "#FFFFFF");
+$("#next-media-title").css("color", "#FFFFFF");
+$("#header-panel-bar").css("color", "#FFFFFF");
+$("#volume").css("color", "#FFFFFF");
+$("#now-playing-time").css("color", "#FFFFFF");
+$("#user-meta").css("color", "#FFFFFF");
+}
+}
+API.on(API.CHAT_COMMAND, ativarr);
+function ativarr(value) {
+cmd = value.split(" ");
+
+if (cmd[0] == "/ativarbg"){
+$("#chat-messages").append("<div class='Orange system'></i><span class='text'>Planos de Fundo script ativado novamente.</span></div>");
+API.on(API.CHAT_COMMAND, command);
+$("body").css("background-image", "url(http://i.imgur.com/XZNVZmj.png)");
+$("#playback .background").hide();
+$("#playback-container").css("border", "2px solid #4D4D4D");
+$(".item.s-av.selected").click();
+$("span.username").css("color", "#32CD32");
+$("#room-name").css("color", "#32CD32");
+$("#now-playing-media").css("color", "#32CD32");
+$("#hit").css("color", "#32CD32");
+$("#next-media-title").css("color", "#32CD32");
+$("#header-panel-bar").css("color", "#32CD32");
+$("#volume").css("color", "#32CD32");
+$("#now-playing-time").css("color", "#32CD32");
+$("#user-meta").css("color", "#32CD32");
 }
 }

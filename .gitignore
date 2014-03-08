@@ -1,3 +1,5 @@
+API.chatLog("BGs on!"true);
+
 $("body").css("background-image", "url(http://i.imgur.com/XZNVZmj.png)");
 $("#playback .background").hide();
 $("#playback-container").css("border", "2px solid #4D4D4D");

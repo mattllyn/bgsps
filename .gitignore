@@ -1,4 +1,4 @@
-API.chatLog("BGs on!"true);
+
 
 $("body").css("background-image", "url(http://i.imgur.com/XZNVZmj.png)");
 $("#playback .background").hide();
@@ -18,12 +18,13 @@ var style = document.createElement('style');
 style.type = 'text/css';style.innerHTML = '.LGreen { color: rgb(124, 252, 0)!important;border-left: rgb(124, 252, 0) 3px solid!important; }'; //verded
 document.getElementsByTagName('head')[0].appendChild(style);
 
+API.on(API.CHAT_COMMAND, command);
+function command(value) {
+API.chatLog("BGs on!"true);
 $("#chat-messages").append("<div class='system'><i class='icon icon-active-rollover'></i><span class='text'>Planos de Fundo script ativado!</span></div>");
 $("#chat-messages").append("<div class='LGreen system'></i><span class='text'>Para mudar o plando de fundo digite: /bg1 a 8<br/>Exemplo: /bg1, /bg2... <br/>Para ativar/desativar os planos de fundo, digite:/ativarbg /desativarbg <br/>Para ativar/desativar as cores digite: /coreson /coresoff <br/>Para ver essa mensagem novamente digite: /comandosbg ou /cmdsbg</span></div>");
 $("#chat-messages").append("<div class='system'></i><span class='text'>BGs por: PlugStation.  Todos os direitos reservados.</span></div>");
 
-API.on(API.CHAT_COMMAND, command);
-function command(value) {
 cmd = value.split(" ");
 
 if (cmd[0] == "/comandosbg" || cmd[0] == "/cmdsbg"){
